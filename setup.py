@@ -5,19 +5,19 @@ from setuptools import setup, find_packages
 from io import open
 from os import path
 
-from kivy_garden.flower import __version__
+from kivy_garden.filebrowser import __version__
 
 here = path.abspath(path.dirname(__file__))
 
 with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
-URL = 'https://github.com/kivy-garden/flower'
+URL = 'https://github.com/kivy-garden/filebrowser'
 
 setup(
-    name='kivy_garden.flower',
+    name='kivy_garden.filebrowser',
     version=__version__,
-    description='A kivy garden flower demo.',
+    description='An advanced kivy file browser.',
     long_description=long_description,
     long_description_content_type='text/markdown',
     url=URL,
@@ -34,7 +34,7 @@ setup(
     ],
     keywords='Kivy kivy-garden',
 
-    packages=['kivy_garden.flower'],
+    packages=['kivy_garden.filebrowser'],
     install_requires=[],
     extras_require={
         'dev': ['pytest>=3.6', 'wheel', 'pytest-cov', 'pycodestyle'],
