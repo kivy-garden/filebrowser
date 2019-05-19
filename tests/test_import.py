@@ -2,5 +2,5 @@ import pytest
 
 
 def test_flower():
-    from kivy_garden.filwbrowser import FileBrowser
+    from kivy_garden.filebrowser import FileBrowser
     widget = FileBrowser()
