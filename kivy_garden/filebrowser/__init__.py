@@ -56,16 +56,13 @@ a shortcut to the Documents directory added to the favorites bar::
     :align: right
 '''
 
-__all__ = ('FileBrowser', )
-
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.treeview import TreeViewLabel, TreeView
-from kivy.uix.filechooser import FileChooserIconView as IconView
 try:
-    from kivy.garden.filechooserthumbview import FileChooserThumbView as\
-    IconView
-except:
-    pass
+    from kivy.garden.filechooserthumbview import FileChooserThumbView as \
+        IconView
+except ImportError:
+    from kivy.uix.filechooser import FileChooserIconView as IconView
 from kivy.properties import (ObjectProperty, StringProperty, OptionProperty,
                              ListProperty, BooleanProperty)
 from kivy.lang import Builder
@@ -82,6 +79,8 @@ if platform == 'win':
     from ctypes import windll, create_unicode_buffer
 
 from ._version import __version__
+
+__all__ = ('FileBrowser', )
 
 
 def get_home_directory():
@@ -131,8 +130,10 @@ def get_drives():
                 drives.append((vol + sep + drive, drive))
     return drives
 
+
 class FileBrowserIconView(IconView):
     pass
+
 
 Builder.load_string('''
 #:kivy 1.2.0
@@ -231,7 +232,8 @@ Builder.load_string('''
             on_text_validate:
                 root.filters = self.text.split(',') if self.text else []
             multiline: False
-            text: ','.join([filt for filt in root.filters if isinstance(filt, str)])
+            text: ','.join(\
+[filt for filt in root.filters if isinstance(filt, str)])
         Button:
             id: cancel_button
             size_hint_x: None
@@ -268,8 +270,8 @@ class LinkTree(TreeView):
             if isdir(join(user_path, place)):
                 self.add_node(TreeLabel(text=place, path=join(user_path,
                                         place)), libs)
-        self._computer_node = self.add_node(TreeLabel(text='Computer',\
-        is_open=True, no_selection=True))
+        self._computer_node = self.add_node(TreeLabel(
+            text='Computer', is_open=True, no_selection=True))
         self._computer_node.bind(on_touch_down=self._drives_touch)
         self.reload_drives()
 
@@ -278,8 +280,9 @@ class LinkTree(TreeView):
             self.reload_drives()
 
     def reload_drives(self):
-        nodes = [(node, node.text + node.path) for node in\
-                 self._computer_node.nodes if isinstance(node, TreeLabel)]
+        nodes = [(node, node.text + node.path)
+                 for node in self._computer_node.nodes
+                 if isinstance(node, TreeLabel)]
         sigs = [s[1] for s in nodes]
         nodes_new = []
         sig_new = []
@@ -393,7 +396,9 @@ class FileBrowser(BoxLayout):
     '''
 
     filters = ListProperty([])
-    ''':class:`~kivy.properties.ListProperty`, defaults to [], equal to '\*'.
+    ''':class:`~kivy.properties.ListProperty`, defaults to [], equal to
+    ``'*'``.
+
     Specifies the filters to be applied to the files in the directory.
     See :kivy_fchooser:`kivy.uix.filechooser.FileChooserController.filters`.
 
@@ -479,22 +484,24 @@ class FileBrowser(BoxLayout):
         Clock.schedule_once(self._post_init)
 
     def _post_init(self, *largs):
-        self.ids.icon_view.bind(selection=partial(self._attr_callback, 'selection'),
-                                path=partial(self._attr_callback, 'path'),
-                                filters=partial(self._attr_callback, 'filters'),
-                                filter_dirs=partial(self._attr_callback, 'filter_dirs'),
-                                show_hidden=partial(self._attr_callback, 'show_hidden'),
-                                multiselect=partial(self._attr_callback, 'multiselect'),
-                                dirselect=partial(self._attr_callback, 'dirselect'),
-                                rootpath=partial(self._attr_callback, 'rootpath'))
-        self.ids.list_view.bind(selection=partial(self._attr_callback, 'selection'),
-                                path=partial(self._attr_callback, 'path'),
-                                filters=partial(self._attr_callback, 'filters'),
-                                filter_dirs=partial(self._attr_callback, 'filter_dirs'),
-                                show_hidden=partial(self._attr_callback, 'show_hidden'),
-                                multiselect=partial(self._attr_callback, 'multiselect'),
-                                dirselect=partial(self._attr_callback, 'dirselect'),
-                                rootpath=partial(self._attr_callback, 'rootpath'))
+        self.ids.icon_view.bind(
+            selection=partial(self._attr_callback, 'selection'),
+            path=partial(self._attr_callback, 'path'),
+            filters=partial(self._attr_callback, 'filters'),
+            filter_dirs=partial(self._attr_callback, 'filter_dirs'),
+            show_hidden=partial(self._attr_callback, 'show_hidden'),
+            multiselect=partial(self._attr_callback, 'multiselect'),
+            dirselect=partial(self._attr_callback, 'dirselect'),
+            rootpath=partial(self._attr_callback, 'rootpath'))
+        self.ids.list_view.bind(
+            selection=partial(self._attr_callback, 'selection'),
+            path=partial(self._attr_callback, 'path'),
+            filters=partial(self._attr_callback, 'filters'),
+            filter_dirs=partial(self._attr_callback, 'filter_dirs'),
+            show_hidden=partial(self._attr_callback, 'show_hidden'),
+            multiselect=partial(self._attr_callback, 'multiselect'),
+            dirselect=partial(self._attr_callback, 'dirselect'),
+            rootpath=partial(self._attr_callback, 'rootpath'))
 
     def _shorten_filenames(self, filenames):
         if not len(filenames):
@@ -508,6 +515,7 @@ class FileBrowser(BoxLayout):
 
     def _attr_callback(self, attr, obj, value):
         setattr(self, attr, getattr(obj, attr))
+
 
 if __name__ == '__main__':
     import os
