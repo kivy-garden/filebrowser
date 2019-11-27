@@ -1,7 +1,7 @@
-See http://kivy-garden.github.io/garden.filebrowser/index.html
-
 [![Coverage Status](https://coveralls.io/repos/github/kivy-garden/filebrowser/badge.svg?branch=master)](https://coveralls.io/github/kivy-garden/filebrowser?branch=master)
 [![Github Build Status](https://github.com/kivy-garden/filebrowser/workflows/Garden%20flower/badge.svg)](https://github.com/kivy-garden/filebrowser/actions)
+
+See https://kivy-garden.github.io/filebrowser/ for the rendered filebrowser docs.
 
 FileBrowser
 ===========
