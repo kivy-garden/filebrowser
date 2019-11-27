@@ -61,7 +61,7 @@ from kivy.uix.treeview import TreeViewLabel, TreeView
 try:
     from kivy.garden.filechooserthumbview import FileChooserThumbView as \
         IconView
-except ImportError:
+except (ImportError, KeyError):
     from kivy.uix.filechooser import FileChooserIconView as IconView
 from kivy.properties import (ObjectProperty, StringProperty, OptionProperty,
                              ListProperty, BooleanProperty)
