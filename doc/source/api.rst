@@ -1,11 +1,9 @@
 
-#####################
-  The FileBrowser API
-#####################
+######################
+  The Filebrowser API
+######################
 
-:mod:`filebrowser`
-==============================
+.. toctree::
+   :maxdepth: 1
 
-.. automodule:: __init__
-   :members:
-   :show-inheritance:
+   flower.rst

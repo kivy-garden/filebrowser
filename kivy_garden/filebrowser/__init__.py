@@ -57,7 +57,6 @@ a shortcut to the Documents directory added to the favorites bar::
 '''
 
 __all__ = ('FileBrowser', )
-__version__ = '1.1-dev'
 
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.treeview import TreeViewLabel, TreeView
@@ -81,6 +80,8 @@ from functools import partial
 
 if platform == 'win':
     from ctypes import windll, create_unicode_buffer
+
+from ._version import __version__
 
 
 def get_home_directory():
