@@ -3,6 +3,8 @@
 
 See https://kivy-garden.github.io/filebrowser/ for the rendered filebrowser docs.
 
+For a native filebrowser, consider using [plyer's filechooser](https://github.com/kivy/plyer) instead.
+
 FileBrowser
 ===========
 
