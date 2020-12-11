@@ -1,0 +1,458 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Filebrowser &mdash; Filebrowser  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="The Filebrowser API" href="api.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Filebrowser
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="api.html">The Filebrowser API</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Filebrowser</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#kivy-garden-filebrowser"><code class="xref py py-mod docutils literal notranslate"><span class="pre">kivy_garden.filebrowser</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">FileBrowser</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Filebrowser</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="api.html">The Filebrowser API</a> &raquo;</li>
+        
+      <li>Filebrowser</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/flower.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="filebrowser">
+<span id="flower-api"></span><h1>Filebrowser<a class="headerlink" href="#filebrowser" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="kivy-garden-filebrowser">
+<h2><a class="reference internal" href="#module-kivy_garden.filebrowser" title="kivy_garden.filebrowser"><code class="xref py py-mod docutils literal notranslate"><span class="pre">kivy_garden.filebrowser</span></code></a><a class="headerlink" href="#kivy-garden-filebrowser" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-kivy_garden.filebrowser"></span><div class="section" id="id1">
+<h3>FileBrowser<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="#kivy_garden.filebrowser.FileBrowser" title="kivy_garden.filebrowser.FileBrowser"><code class="xref py py-class docutils literal notranslate"><span class="pre">FileBrowser</span></code></a> widget is an advanced file browser. You use it
+similarly to FileChooser usage.</p>
+<p>It provides a shortcut bar with links to special and system directories.
+When touching next to a shortcut in the links bar, it’ll expand and show
+all the directories within that directory. It also facilitates specifying
+custom paths to be added to the shortcuts list.</p>
+<p>It provides a icon and list view to choose files from. And it also accepts
+filter and filename inputs.</p>
+<p>To create a FileBrowser which prints the currently selected file as well as
+the current text in the filename field when ‘Select’ is pressed, with
+a shortcut to the Documents directory added to the favorites bar:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">kivy.app</span> <span class="kn">import</span> <span class="n">App</span>
+
+<span class="k">class</span> <span class="nc">TestApp</span><span class="p">(</span><span class="n">App</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">user_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">get_home_directory</span><span class="p">(),</span> <span class="s1">&#39;Documents&#39;</span><span class="p">)</span>
+        <span class="n">browser</span> <span class="o">=</span> <span class="n">FileBrowser</span><span class="p">(</span><span class="n">select_string</span><span class="o">=</span><span class="s1">&#39;Select&#39;</span><span class="p">,</span>
+                              <span class="n">favorites</span><span class="o">=</span><span class="p">[(</span><span class="n">user_path</span><span class="p">,</span> <span class="s1">&#39;Documents&#39;</span><span class="p">)])</span>
+        <span class="n">browser</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">on_success</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_fbrowser_success</span><span class="p">,</span>
+                     <span class="n">on_canceled</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_fbrowser_canceled</span><span class="p">,</span>
+                     <span class="n">on_submit</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_fbrowser_submit</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">browser</span>
+
+    <span class="k">def</span> <span class="nf">_fbrowser_canceled</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;cancelled, Close self.&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_fbrowser_success</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">instance</span><span class="o">.</span><span class="n">selection</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_fbrowser_submit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">instance</span><span class="o">.</span><span class="n">selection</span><span class="p">)</span>
+
+<span class="n">TestApp</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Events</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><cite>on_canceled</cite>:</dt><dd><p>Fired when the <cite>Cancel</cite> buttons <cite>on_release</cite> event is called.</p>
+</dd>
+<dt><cite>on_success</cite>:</dt><dd><p>Fired when the <cite>Select</cite> buttons <cite>on_release</cite> event is called.</p>
+</dd>
+<dt><cite>on_submit</cite>:</dt><dd><p>Fired when a file has been selected with a double-tap.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<img alt="_static/filebrowser.png" class="align-right" src="_static/filebrowser.png" />
+<dl class="py class">
+<dt id="kivy_garden.filebrowser.FileBrowser">
+<em class="property">class </em><code class="sig-prename descclassname">kivy_garden.filebrowser.</code><code class="sig-name descname">FileBrowser</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.filebrowser.FileBrowser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://kivy.org/doc/stable/api-kivy.uix.boxlayout.html#kivy.uix.boxlayout.BoxLayout" title="(in Kivy v2.0.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">kivy.uix.boxlayout.BoxLayout</span></code></a></p>
+<p>FileBrowser class, see module documentation for more information.</p>
+<dl class="py attribute">
+<dt id="kivy_garden.filebrowser.FileBrowser.cancel_state">
+<code class="sig-name descname">cancel_state</code><a class="headerlink" href="#kivy_garden.filebrowser.FileBrowser.cancel_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>State of the ‘cancel’ button, must be one of ‘normal’ or ‘down’.
+The state is ‘down’ only when the button is currently touched/clicked,
+otherwise ‘normal’. This button functions as the typical cancel button.</p>
+<p><a class="reference internal" href="#kivy_garden.filebrowser.FileBrowser.cancel_state" title="kivy_garden.filebrowser.FileBrowser.cancel_state"><code class="xref py py-data docutils literal notranslate"><span class="pre">cancel_state</span></code></a> is an <a class="reference external" href="https://kivy.org/doc/stable/api-kivy.properties.html#kivy.properties.OptionProperty" title="(in Kivy v2.0.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptionProperty</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="kivy_garden.filebrowser.FileBrowser.cancel_string">
+<code class="sig-name descname">cancel_string</code><a class="headerlink" href="#kivy_garden.filebrowser.FileBrowser.cancel_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Label of the ‘cancel’ button.</p>
+<p><a class="reference internal" href="#kivy_garden.filebrowser.FileBrowser.cancel_string" title="kivy_garden.filebrowser.FileBrowser.cancel_string"><code class="xref py py-data docutils literal notranslate"><span class="pre">cancel_string</span></code></a> is an <a class="reference external" href="https://kivy.org/doc/stable/api-kivy.properties.html#kivy.properties.StringProperty" title="(in Kivy v2.0.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">StringProperty</span></code></a>,
+defaults to ‘Cancel’.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="kivy_garden.filebrowser.FileBrowser.dirselect">
+<code class="sig-name descname">dirselect</code><a class="headerlink" href="#kivy_garden.filebrowser.FileBrowser.dirselect" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference external" href="https://kivy.org/doc/stable/api-kivy.properties.html#kivy.properties.BooleanProperty" title="(in Kivy v2.0.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanProperty</span></code></a>, defaults to False.
+Determines whether directories are valid selections or not.
+See
+<a href="#id2"><span class="problematic" id="id3">:kivy_fchooser:`kivy.uix.filechooser.FileChooserController.dirselect`</span></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="kivy_garden.filebrowser.FileBrowser.favorites">
+<code class="sig-name descname">favorites</code><a class="headerlink" href="#kivy_garden.filebrowser.FileBrowser.favorites" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of the paths added to the favorites link bar. Each element
+is a tuple where the first element is a string containing the full path
+to the location, while the second element is a string with the name of
+path to be displayed.</p>
+<p><a class="reference internal" href="#kivy_garden.filebrowser.FileBrowser.favorites" title="kivy_garden.filebrowser.FileBrowser.favorites"><code class="xref py py-data docutils literal notranslate"><span class="pre">favorites</span></code></a> is an <a class="reference external" href="https://kivy.org/doc/stable/api-kivy.properties.html#kivy.properties.ListProperty" title="(in Kivy v2.0.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListProperty</span></code></a>,
+defaults to ‘[]’.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="kivy_garden.filebrowser.FileBrowser.filename">
+<code class="sig-name descname">filename</code><a class="headerlink" href="#kivy_garden.filebrowser.FileBrowser.filename" title="Permalink to this definition">¶</a></dt>
+<dd><p>The current text in the filename field. Read only. When multiselect is
+True, the list of selected filenames is shortened. If shortened, filename
+will contain an ellipsis.</p>
+<p><a class="reference internal" href="#kivy_garden.filebrowser.FileBrowser.filename" title="kivy_garden.filebrowser.FileBrowser.filename"><code class="xref py py-data docutils literal notranslate"><span class="pre">filename</span></code></a> is an <a class="reference external" href="https://kivy.org/doc/stable/api-kivy.properties.html#kivy.properties.StringProperty" title="(in Kivy v2.0.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">StringProperty</span></code></a>,
+defaults to ‘’.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="kivy_garden.filebrowser.FileBrowser.filter_dirs">
+<code class="sig-name descname">filter_dirs</code><a class="headerlink" href="#kivy_garden.filebrowser.FileBrowser.filter_dirs" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference external" href="https://kivy.org/doc/stable/api-kivy.properties.html#kivy.properties.BooleanProperty" title="(in Kivy v2.0.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanProperty</span></code></a>, defaults to False.
+Indicates whether filters should also apply to directories.
+See
+<a href="#id4"><span class="problematic" id="id5">:kivy_fchooser:`kivy.uix.filechooser.FileChooserController.filter_dirs`</span></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="kivy_garden.filebrowser.FileBrowser.filters">
+<code class="sig-name descname">filters</code><a class="headerlink" href="#kivy_garden.filebrowser.FileBrowser.filters" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference external" href="https://kivy.org/doc/stable/api-kivy.properties.html#kivy.properties.ListProperty" title="(in Kivy v2.0.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListProperty</span></code></a>, defaults to [], equal to
+<code class="docutils literal notranslate"><span class="pre">'*'</span></code>.</p>
+<p>Specifies the filters to be applied to the files in the directory.
+See <a href="#id6"><span class="problematic" id="id7">:kivy_fchooser:`kivy.uix.filechooser.FileChooserController.filters`</span></a>.</p>
+<p>Filering keywords that the user types into the filter field as a comma
+separated list will be reflected here.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="kivy_garden.filebrowser.FileBrowser.multiselect">
+<code class="sig-name descname">multiselect</code><a class="headerlink" href="#kivy_garden.filebrowser.FileBrowser.multiselect" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference external" href="https://kivy.org/doc/stable/api-kivy.properties.html#kivy.properties.BooleanProperty" title="(in Kivy v2.0.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanProperty</span></code></a>, defaults to False.
+Determines whether the user is able to select multiple files or not.
+See
+<a href="#id8"><span class="problematic" id="id9">:kivy_fchooser:`kivy.uix.filechooser.FileChooserController.multiselect`</span></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="kivy_garden.filebrowser.FileBrowser.on_canceled">
+<code class="sig-name descname">on_canceled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.filebrowser.FileBrowser.on_canceled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="kivy_garden.filebrowser.FileBrowser.on_submit">
+<code class="sig-name descname">on_submit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.filebrowser.FileBrowser.on_submit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="kivy_garden.filebrowser.FileBrowser.on_success">
+<code class="sig-name descname">on_success</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kivy_garden.filebrowser.FileBrowser.on_success" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="kivy_garden.filebrowser.FileBrowser.path">
+<code class="sig-name descname">path</code><a class="headerlink" href="#kivy_garden.filebrowser.FileBrowser.path" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference external" href="https://kivy.org/doc/stable/api-kivy.properties.html#kivy.properties.StringProperty" title="(in Kivy v2.0.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">StringProperty</span></code></a>, defaults to the current working
+directory as a unicode string. It specifies the path on the filesystem that
+browser should refer to.
+See <a href="#id10"><span class="problematic" id="id11">:kivy_fchooser:`kivy.uix.filechooser.FileChooserController.path`</span></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="kivy_garden.filebrowser.FileBrowser.rootpath">
+<code class="sig-name descname">rootpath</code><a class="headerlink" href="#kivy_garden.filebrowser.FileBrowser.rootpath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Root path to use instead of the system root path. If set, it will not show
+a “..” directory to go up to the root path. For example, if you set
+rootpath to /users/foo, the user will be unable to go to /users or to any
+other directory not starting with /users/foo.
+<a class="reference external" href="https://kivy.org/doc/stable/api-kivy.properties.html#kivy.properties.StringProperty" title="(in Kivy v2.0.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">StringProperty</span></code></a>, defaults to None.
+See <a href="#id12"><span class="problematic" id="id13">:kivy_fchooser:`kivy.uix.filechooser.FileChooserController.rootpath`</span></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="kivy_garden.filebrowser.FileBrowser.select_state">
+<code class="sig-name descname">select_state</code><a class="headerlink" href="#kivy_garden.filebrowser.FileBrowser.select_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>State of the ‘select’ button, must be one of ‘normal’ or ‘down’.
+The state is ‘down’ only when the button is currently touched/clicked,
+otherwise ‘normal’. This button functions as the typical Ok/Select/Save
+button.</p>
+<p><a class="reference internal" href="#kivy_garden.filebrowser.FileBrowser.select_state" title="kivy_garden.filebrowser.FileBrowser.select_state"><code class="xref py py-data docutils literal notranslate"><span class="pre">select_state</span></code></a> is an <a class="reference external" href="https://kivy.org/doc/stable/api-kivy.properties.html#kivy.properties.OptionProperty" title="(in Kivy v2.0.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OptionProperty</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="kivy_garden.filebrowser.FileBrowser.select_string">
+<code class="sig-name descname">select_string</code><a class="headerlink" href="#kivy_garden.filebrowser.FileBrowser.select_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Label of the ‘select’ button.</p>
+<p><a class="reference internal" href="#kivy_garden.filebrowser.FileBrowser.select_string" title="kivy_garden.filebrowser.FileBrowser.select_string"><code class="xref py py-data docutils literal notranslate"><span class="pre">select_string</span></code></a> is an <a class="reference external" href="https://kivy.org/doc/stable/api-kivy.properties.html#kivy.properties.StringProperty" title="(in Kivy v2.0.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">StringProperty</span></code></a>,
+defaults to ‘Ok’.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="kivy_garden.filebrowser.FileBrowser.selection">
+<code class="sig-name descname">selection</code><a class="headerlink" href="#kivy_garden.filebrowser.FileBrowser.selection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only <a class="reference external" href="https://kivy.org/doc/stable/api-kivy.properties.html#kivy.properties.ListProperty" title="(in Kivy v2.0.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListProperty</span></code></a>.
+Contains the list of files that are currently selected in the current tab.
+See <a href="#id14"><span class="problematic" id="id15">:kivy_fchooser:`kivy.uix.filechooser.FileChooserController.selection`</span></a>.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.1.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="kivy_garden.filebrowser.FileBrowser.show_hidden">
+<code class="sig-name descname">show_hidden</code><a class="headerlink" href="#kivy_garden.filebrowser.FileBrowser.show_hidden" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference external" href="https://kivy.org/doc/stable/api-kivy.properties.html#kivy.properties.BooleanProperty" title="(in Kivy v2.0.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanProperty</span></code></a>, defaults to False.
+Determines whether hidden files and folders should be shown.
+See
+<a href="#id16"><span class="problematic" id="id17">:kivy_fchooser:`kivy.uix.filechooser.FileChooserController.show_hidden`</span></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.</span></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="api.html" class="btn btn-neutral float-left" title="The Filebrowser API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Kivy
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
